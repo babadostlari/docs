@@ -1,95 +1,95 @@
 ---
-title: 'Development'
-description: 'Preview changes locally to update your docs'
+title: 'Geliştirme'
+description: 'Değişiklikleri yerel olarak önizleyerek sitenizi güncelleyin'
 icon: 'terminal'
 ---
 
 <Info>
-  **Prerequisites**:
-  - Node.js version 19 or higher
-  - A docs repository with a `docs.json` file
+  **Gereksinimler**:
+  - Node.js 19 veya üzeri
+  - `docs.json` dosyası bulunan bir docs deposu
 </Info>
 
-Follow these steps to install and run Mintlify on your operating system.
+Mintlify'i yüklemek ve çalıştırmak için şu adımları izleyin.
 
 <Steps>
-<Step title="Install the Mintlify CLI">
+<Step title="Mintlify CLI'yi yükleyin">
 
 ```bash
 npm i -g mint
 ```
 </Step>
 
-<Step title="Preview locally">
+<Step title="Yerel önizleme">
 
-Navigate to your docs directory where your `docs.json` file is located, and run the following command:
+`docs.json` dosyasının bulunduğu klasörde aşağıdaki komutu çalıştırın:
 
 ```bash
 mint dev
 ```
 
-A local preview of your documentation will be available at `http://localhost:3000`.
+Bu komuttan sonra `http://localhost:3000` adresinde yerel önizlemeyi görebilirsiniz.
 
 </Step>
 </Steps>
 
-## Custom ports
+## Özel portlar
 
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. For example, to run Mintlify on port 3333, use this command:
+Varsayılan olarak Mintlify port 3000'i kullanır. Başka bir port kullanmak için `--port` bayrağını kullanabilirsiniz. Örneğin:
 
 ```bash
 mint dev --port 3333
 ```
 
-If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
+Eğer port zaten kullanımda ise, Mintlify bir sonraki kullanılabilir porta geçecektir.
 
 ```md
-Port 3000 is already in use. Trying 3001 instead.
+Port 3000 zaten kullanımda. 3001 numaralı porta geçiliyor.
 ```
 
-## Mintlify versions
+## Mintlify sürümleri
 
-Please note that each CLI release is associated with a specific version of Mintlify. If your local preview does not align with the production version, please update the CLI:
+CLI sürümünüzün güncel olduğundan emin olun. Yerel önizleme ile üretim sürümü farklı ise CLI'yi güncelleyin:
 
 ```bash
 npm mint update
 ```
 
-## Validating links
+## Link doğrulama
 
-The CLI can assist with validating links in your documentation. To identify any broken links, use the following command:
+Bağlantı doğrulamak için aşağıdaki komutu kullanabilirsiniz:
 
 ```bash
 mint broken-links
 ```
 
-## Deployment
+## Dağıtım
 
-If the deployment is successful, you should see the following:
+Deploy başarılı olduğunda benzer bir onay ekranı görürsünüz.
 
 <Frame>
-  <img src="/images/checks-passed.png" alt="Screenshot of a deployment confirmation message that says All checks have passed." style={{ borderRadius: '0.5rem' }} />
+  <img src="/images/checks-passed.png" alt="Tüm kontrollerin geçtiğini belirten dağıtım onay ekranı." style={{ borderRadius: '0.5rem' }} />
 </Frame>
 
-## Code formatting
+## Kod formatlama
 
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
+MDX sözdizimini ve biçimlendirmesini tanıyan editör eklentileri kullanmanızı tavsiye ederiz. VSCode kullanıyorsanız [MDX VSCode uzantısını](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) ve [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) kullanabilirsiniz.
 
-## Troubleshooting
+## Sorun giderme
 
 <AccordionGroup>
-  <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
+  <Accordion title='sharp modülü yüklenemediğinde'>
 
-    This may be due to an outdated version of node. Try the following:
-    1. Remove the currently-installed version of the CLI: `npm remove -g mint`
-    2. Upgrade to Node v19 or higher.
-    3. Reinstall the CLI: `npm i -g mint`
+    Bu sorun eski Node.js sürümünden kaynaklanabilir. Şu adımları uygulayın:
+    1. Mevcut CLI sürümünü kaldırın: `npm remove -g mint`
+    2. Node v19 veya üzeri yükleyin.
+    3. CLI'yi tekrar yükleyin: `npm i -g mint`
   </Accordion>
 
-  <Accordion title="Issue: Encountering an unknown error">
+  <Accordion title="Bilinmeyen bir hata alınıyorsa">
   
-    Solution: Go to the root of your device and delete the `~/.mintlify` folder. Then run `mint dev` again.
+    Çözüm: Cihazınızın kök dizininde `~/.mintlify` klasörünü silin. Ardından `mint dev` komutunu tekrar çalıştırın.
   </Accordion>
 </AccordionGroup>
 
-Curious about what changed in the latest CLI version? Check out the [CLI changelog](https://www.npmjs.com/package/mintlify?activeTab=versions).
+Son CLI güncellemelerini görmek için [CLI değişiklik günlüğüne](https://www.npmjs.com/package/mintlify?activeTab=versions) bakabilirsiniz.
